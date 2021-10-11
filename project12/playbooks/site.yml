@@ -1,3 +1,9 @@
 ---
 - hosts: all
+<<<<<<< HEAD
+=======
+- import_playbook: ../static-assignments/common.yml
+
+- hosts: all
+>>>>>>> c1349ebc70b4dd3c459acabfaa09b43e5da6ac55
 - import_playbook: ../static-assignments/common-del.yml
