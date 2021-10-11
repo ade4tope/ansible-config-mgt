@@ -10,7 +10,11 @@
 
 # Setup/install tasks.
 - include_tasks: setup-RedHat.yml
+<<<<<<< HEAD
   when: ansible_os_family == 'RedHat'
+=======
+  when: ansible_os_family == 'RedHat' or ansible_os_family == 'Rocky'
+>>>>>>> a5f2db30cb4f46e4397f1edb52f5eebae8f4c9ce
 
 - include_tasks: setup-Ubuntu.yml
   when: ansible_distribution == 'Ubuntu'
@@ -32,7 +36,10 @@
 
 # Nginx setup.
 - name: Copy nginx configuration in place.
+<<<<<<< HEAD
   become: true
+=======
+>>>>>>> a5f2db30cb4f46e4397f1edb52f5eebae8f4c9ce
   template:
     src: "{{ nginx_conf_template }}"
     dest: "{{ nginx_conf_file_path }}"
@@ -43,7 +50,10 @@
     - reload nginx
 
 - name: Ensure nginx service is running as configured.
+<<<<<<< HEAD
   become: true
+=======
+>>>>>>> a5f2db30cb4f46e4397f1edb52f5eebae8f4c9ce
   service:
     name: nginx
     state: "{{ nginx_service_state }}"

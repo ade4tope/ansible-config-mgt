@@ -47,6 +47,7 @@ nginx_extra_conf_options: ""
 #     env VARIABLE;
 #     include /etc/nginx/main.d/*.conf;
 
+<<<<<<< HEAD
 nginx_extra_http_options:
 Example extra http options, printed inside the main server http config:
    nginx_extra_http_options: |
@@ -55,6 +56,16 @@ Example extra http options, printed inside the main server http config:
      proxy_set_header   X-Scheme $scheme;
      proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;
      proxy_set_header   Host $http_host;
+=======
+nginx_extra_http_options: ""
+# Example extra http options, printed inside the main server http config:
+#    nginx_extra_http_options: |
+#      proxy_buffering    off;
+#      proxy_set_header   X-Real-IP $remote_addr;
+#      proxy_set_header   X-Scheme $scheme;
+#      proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;
+#      proxy_set_header   Host $http_host;
+>>>>>>> a5f2db30cb4f46e4397f1edb52f5eebae8f4c9ce
 
 nginx_remove_default_vhost: false
 
@@ -78,6 +89,7 @@ nginx_vhosts: []
 #   template: "" # Can be used to override the `nginx_vhost_template` per host.
 #   state: "absent" # To remove the vhost configuration.
 
+<<<<<<< HEAD
 nginx_upstreams:
 - name: myapp1
   strategy: "ip_hash" # "least_conn", etc.
@@ -85,6 +97,16 @@ nginx_upstreams:
   servers:
     - "172.31.81.110 weight=3"
     - "172.31.81.195 weight=3"
+=======
+nginx_upstreams: []
+# - name: myapp1
+#   strategy: "ip_hash" # "least_conn", etc.
+#   keepalive: 16 # optional
+#   servers:
+#     - "srv1.example.com"
+#     - "srv2.example.com weight=3"
+#     - "srv3.example.com"
+>>>>>>> a5f2db30cb4f46e4397f1edb52f5eebae8f4c9ce
 
 nginx_log_format: |-
   '$remote_addr - $remote_user [$time_local] "$request" '
